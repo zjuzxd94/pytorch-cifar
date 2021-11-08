@@ -40,7 +40,7 @@ transform_test = transforms.Compose([
 ])
 
 import oss2
-auth = oss2.Auth('LTAI5t99GXFcMDBUwmRQTMZA', 'YQCPOiirJD5r5wIVcjJ6GziZX4p2wY')
+auth = oss2.Auth('LTAI5tPnQZMhRZcXdeNMzFmr', 'yIdRbXkLqr3jdoTDsUlcBIiiq6dayk')
 bucket = oss2.Bucket(auth, 'http://oss-cn-shanghai.aliyuncs.com', 'zxdbucket')
 if not os.path.exists('./data'):
     os.mkdir('./data')
