@@ -39,6 +39,11 @@ transform_test = transforms.Compose([
     transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
 ])
 
+import oss2
+auth = oss2.Auth('LTAI5t99GXFcMDBUwmRQTMZA', 'YQCPOiirJD5r5wIVcjJ6GziZX4p2wY')
+bucket = oss2.Bucket(auth, 'http://oss-cn-shanghai.aliyuncs.com', 'zxdbucket')
+bucket.get_object_to_file('dataset/cifar-10-python.tar.gz', './data/cifar-10-python.tar.gz')
+
 trainset = torchvision.datasets.CIFAR10(
     root='./data', train=True, download=True, transform=transform_train)
 trainloader = torch.utils.data.DataLoader(
